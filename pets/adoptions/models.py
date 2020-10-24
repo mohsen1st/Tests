@@ -16,3 +16,5 @@ class Pet(models.Model):  # inherits from models.Model
 
 class Vaccine(models.Model):
     name = models.CharField(max_length=50)
+    def __str__(self):
+        return self.name #to show the vaccine names in the admin panel
