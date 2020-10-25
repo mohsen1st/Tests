@@ -1,3 +1,9 @@
 from django.shortcuts import render
 
-# Create your views here.
+from django.http import HttpResponse
+
+def home(request):
+    return HttpResponse('<p>home view</p>')
+
+def pet_detail(request, pet_id):
+    return HttpResponse(f'<p>pet_detail view with id {pert_id} </p>')
