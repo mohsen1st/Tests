@@ -1,4 +1,6 @@
-<html>
+{% extends "base.html"%}
+{%block content %}
+
     <div>
 
     {% for pet in pets %}
@@ -10,9 +12,10 @@
         {% if pet.breed %}
         <p>Breed: {{ pet.breed }}</p>
         {%endif%}
-        <p class="hidden">{{pet.decription}}</p>
+        <p class="hidden">{{pet.description}}</p>
 
     </div>
     {% endfor %}
     </div>
-</html>
+
+{%endblock%}
