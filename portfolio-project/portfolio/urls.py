@@ -16,9 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 import jobs.views #to access to views.py file
-
+from django.conf import settings
+from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home', jobs.views.home, name='home' ), #the first home is the URL, the second home is the name of the fucntion in the views file
     path('', jobs.views.home, name='home' )
-]
+] + static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
