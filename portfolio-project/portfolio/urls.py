@@ -20,4 +20,5 @@ import jobs.views #to access to views.py file
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home', jobs.views.home, name='home' ), #the first home is the URL, the second home is the name of the fucntion in the views file
+    path('', jobs.views.home, name='home' )
 ]
