@@ -21,7 +21,8 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('home', jobs.views.home, name='home' ), #the first home is the URL, the second home is the name of the fucntion in the views file
-    path('', jobs.views.home, name='home' )
+    path('', jobs.views.home, name='home' ),
+    path('jobs/<int:job_id>', jobs.views.detail, name='detail'), #if anyone enteres a number after the job id, it takes us to the job id page
 ] 
 urlpatterns += static(settings.STATIC_URL,document_root=settings.STATIC_ROOT)
 urlpatterns += static(settings.MEDIA_URL,document_root=settings.MEDIA_ROOT)
